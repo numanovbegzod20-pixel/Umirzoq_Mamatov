@@ -718,7 +718,7 @@
         <div class="info-item"><span>🕐</span>08:00–18:00</div>
       </div>
       <div style="font-size:12px;color:var(--muted);margin-top:8px;">Asab tizimi kasalliklari, bosh og'riq, EEG, igna terapiya.</div>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;"><span class="badge">✅ Bo'sh</span></div>
+      <div id="status-nevrolog" style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;"><span id="badge-nevrolog" class="badge">✅ Bo'sh</span><span id="time-nevrolog" style="font-size:11px;color:var(--muted);">08:00–18:00</span></div>
       <button class="btn btn-primary" onclick="selectDoctor('Nevrolog')">Yozilish</button>
     </div>
 
@@ -735,7 +735,7 @@
         <div class="info-item"><span>🕐</span>08:00–18:00</div>
       </div>
       <div style="font-size:12px;color:var(--muted);margin-top:8px;">Ichki kasalliklar, umumiy ko'rik, davolash, statsionar.</div>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;"><span class="badge">✅ Bo'sh</span></div>
+      <div id="status-terapevt" style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;"><span id="badge-terapevt" class="badge">✅ Bo'sh</span><span id="time-terapevt" style="font-size:11px;color:var(--muted);">08:00–18:00</span></div>
       <button class="btn btn-primary" onclick="selectDoctor('Terapevt')">Yozilish</button>
     </div>
 
@@ -752,7 +752,7 @@
         <div class="info-item"><span>🕐</span>08:00–18:00</div>
       </div>
       <div style="font-size:12px;color:var(--muted);margin-top:8px;">Qon, siydik tahlillari, biokimyo, laboratoriya tekshiruvlari.</div>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;"><span class="badge">✅ Bo'sh</span></div>
+      <div id="status-labarant" style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;"><span id="badge-labarant" class="badge">✅ Bo'sh</span><span id="time-labarant" style="font-size:11px;color:var(--muted);">08:00–18:00</span></div>
       <button class="btn btn-primary" onclick="selectDoctor('Labarant')">Yozilish</button>
     </div>
 
@@ -769,7 +769,7 @@
         <div class="info-item"><span>🕐</span>08:00–18:00</div>
       </div>
       <div style="font-size:12px;color:var(--muted);margin-top:8px;">Siydik yo'li kasalliklari, buyrak, prostatit, UZI.</div>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;"><span class="badge">✅ Bo'sh</span></div>
+      <div id="status-urolog" style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;"><span id="badge-urolog" class="badge">✅ Bo'sh</span><span id="time-urolog" style="font-size:11px;color:var(--muted);">08:00–18:00</span></div>
       <button class="btn btn-primary" onclick="selectDoctor('Urolog')">Yozilish</button>
     </div>
 
@@ -786,7 +786,7 @@
         <div class="info-item"><span>🕐</span>08:00–18:00</div>
       </div>
       <div style="font-size:12px;color:var(--muted);margin-top:8px;">Fizioterapiya, ozonoterapiya, massaj, apparatli muolajalar.</div>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;"><span class="badge">✅ Bo'sh</span></div>
+      <div id="status-fizioterapevt" style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;"><span id="badge-fizioterapevt" class="badge">✅ Bo'sh</span><span id="time-fizioterapevt" style="font-size:11px;color:var(--muted);">08:00–18:00</span></div>
       <button class="btn btn-primary" onclick="selectDoctor('Fizioterapevt')">Yozilish</button>
     </div>
 
@@ -803,7 +803,7 @@
         <div class="info-item"><span>🕐</span>08:00–18:00</div>
       </div>
       <div style="font-size:12px;color:var(--muted);margin-top:8px;">Muolajalar, ukol, dropper, bemor parvarishi.</div>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;"><span class="badge">✅ Bo'sh</span></div>
+      <div id="status-hamshira" style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;"><span id="badge-hamshira" class="badge">✅ Bo'sh</span><span id="time-hamshira" style="font-size:11px;color:var(--muted);">08:00–18:00</span></div>
       <button class="btn btn-primary" onclick="selectDoctor('Starshiy Hamshira')">Yozilish</button>
     </div>
 
@@ -844,103 +844,235 @@
   <!-- PRICES -->
   <div class="page" id="page-prices">
     <div class="section-title">Xizmat Narxlari</div>
-    <div style="font-size:12px;color:var(--muted);margin-bottom:14px;text-align:center;">RITM KLINIKASI — rasmiy narxlar</div>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:14px;text-align:center;">RITM KLINIKASI — narxga bosib yozilish mumkin 👆</div>
 
     <!-- TIBBIY XIZMATLAR -->
     <div class="card">
       <div style="font-size:12px;font-weight:700;color:var(--accent);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;">🏥 Tibbiy Xizmatlar</div>
-      <div class="price-row">
-        <div><div class="price-name">Shifokor ko'rigi</div></div>
-        <div style="text-align:right;"><div class="price-val">40 000 – 50 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Terapevt')">
+        <div>
+          <div class="price-name">Shifokor ko'rigi</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent);">40 000 – 50 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">UZI (umumiy)</div></div>
-        <div style="text-align:right;"><div class="price-val">70 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('UZI Mutaxassisi')">
+        <div>
+          <div class="price-name">UZI (umumiy)</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent);">70 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">EKG</div></div>
-        <div style="text-align:right;"><div class="price-val">20 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Terapevt')">
+        <div>
+          <div class="price-name">EKG</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent);">20 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">Statsionar davolanish</div><div class="price-sub">Nonushta, tushlik, kechki ovqat, fizioterapiya</div></div>
-        <div style="text-align:right;"><div class="price-val">150 000 – 180 000</div><div style="font-size:11px;color:var(--muted);">so'm / kun</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Terapevt')">
+        <div>
+          <div class="price-name">Statsionar davolanish</div><div class="price-sub">Nonushta, tushlik, kechki ovqat, fizioterapiya</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent);">150 000 – 180 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm / kun</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">Ambulator davolanish</div></div>
-        <div style="text-align:right;"><div class="price-val">50 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Terapevt')">
+        <div>
+          <div class="price-name">Ambulator davolanish</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent);">50 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">Ozonoterapiya</div></div>
-        <div style="text-align:right;"><div class="price-val">30 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Fizioterapevt')">
+        <div>
+          <div class="price-name">Ozonoterapiya</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent);">30 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">Igna terapiya</div></div>
-        <div style="text-align:right;"><div class="price-val">50 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Nevrolog')">
+        <div>
+          <div class="price-name">Igna terapiya</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent);">50 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">Fizioterapiya apparatidan muolaja</div><div class="price-sub">Har bir apparat uchun</div></div>
-        <div style="text-align:right;"><div class="price-val">20 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Fizioterapevt')">
+        <div>
+          <div class="price-name">Fizioterapiya apparatidan muolaja</div><div class="price-sub">Har bir apparat uchun</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent);">20 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">EEG</div></div>
-        <div style="text-align:right;"><div class="price-val">100 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Nevrolog')">
+        <div>
+          <div class="price-name">EEG</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent);">100 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">Massaj</div></div>
-        <div style="text-align:right;"><div class="price-val">30 000 – 80 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Fizioterapevt')">
+        <div>
+          <div class="price-name">Massaj</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent);">30 000 – 80 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
     </div>
 
     <!-- LABORATORIYA -->
     <div class="card">
       <div style="font-size:12px;font-weight:700;color:var(--accent2);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;">🔬 Laboratoriya</div>
-      <div class="price-row">
-        <div><div class="price-name">Gemoglobin</div></div>
-        <div style="text-align:right;"><div class="price-val" style="color:var(--accent2);">55 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Labarant')">
+        <div>
+          <div class="price-name">Gemoglobin</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent2);">55 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">Siydik tahlili</div></div>
-        <div style="text-align:right;"><div class="price-val" style="color:var(--accent2);">30 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Labarant')">
+        <div>
+          <div class="price-name">Siydik tahlili</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent2);">30 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">PTI</div></div>
-        <div style="text-align:right;"><div class="price-val" style="color:var(--accent2);">30 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Labarant')">
+        <div>
+          <div class="price-name">PTI</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent2);">30 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">BTA (ALT, AST)</div></div>
-        <div style="text-align:right;"><div class="price-val" style="color:var(--accent2);">55 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Labarant')">
+        <div>
+          <div class="price-name">BTA (ALT, AST)</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent2);">55 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">Qand miqdori</div></div>
-        <div style="text-align:right;"><div class="price-val" style="color:var(--accent2);">30 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Labarant')">
+        <div>
+          <div class="price-name">Qand miqdori</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent2);">30 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">Kalsiy</div></div>
-        <div style="text-align:right;"><div class="price-val" style="color:var(--accent2);">30 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Labarant')">
+        <div>
+          <div class="price-name">Kalsiy</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent2);">30 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">Xolesterin</div></div>
-        <div style="text-align:right;"><div class="price-val" style="color:var(--accent2);">30 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Labarant')">
+        <div>
+          <div class="price-name">Xolesterin</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent2);">30 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">Mochevina</div></div>
-        <div style="text-align:right;"><div class="price-val" style="color:var(--accent2);">30 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Labarant')">
+        <div>
+          <div class="price-name">Mochevina</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent2);">30 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">Kreatinin</div></div>
-        <div style="text-align:right;"><div class="price-val" style="color:var(--accent2);">30 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Labarant')">
+        <div>
+          <div class="price-name">Kreatinin</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent2);">30 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">ASLO</div></div>
-        <div style="text-align:right;"><div class="price-val" style="color:var(--accent2);">35 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Labarant')">
+        <div>
+          <div class="price-name">ASLO</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent2);">35 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">RF</div></div>
-        <div style="text-align:right;"><div class="price-val" style="color:var(--accent2);">35 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Labarant')">
+        <div>
+          <div class="price-name">RF</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent2);">35 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
-      <div class="price-row">
-        <div><div class="price-name">SRB</div></div>
-        <div style="text-align:right;"><div class="price-val" style="color:var(--accent2);">35 000</div><div style="font-size:11px;color:var(--muted);">so'm</div></div>
+      <div class="price-row" style="cursor:pointer;" onclick="selectDoctor('Labarant')">
+        <div>
+          <div class="price-name">SRB</div>
+          <div style="font-size:11px;color:var(--accent);margin-top:3px;">👆 Bosib yozilish</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+          <div class="price-val" style="color:var(--accent2);">35 000</div>
+          <div style="font-size:11px;color:var(--muted);">so'm</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1268,6 +1400,8 @@ function doLogin() {
   if (!user) { showErr('l-err', 'Telefon yoki parol noto\'g\'ri'); return; }
 
   currentUser = user;
+  // Sessiyani saqlash - keyingi kirishda so'ramasin
+  localStorage.setItem('mc_session', JSON.stringify({ id: user.id, phone: user.phone }));
   loadBookings();
   enterApp();
 }
@@ -1316,10 +1450,12 @@ function enterApp() {
   document.getElementById('b-date').min = today;
 
   renderProfile();
+  updateDoctorStatus();
 }
 
 function doAppLogout() {
   currentUser = null;
+  localStorage.removeItem('mc_session');
   document.getElementById('screen-app').classList.remove('active');
   document.getElementById('screen-auth').classList.add('active');
   // reset pages
@@ -1410,6 +1546,41 @@ function submitBooking() {
 // ============================================================
 // PROFILE
 // ============================================================
+function updateDoctorStatus() {
+  const today = new Date().toISOString().split('T')[0];
+  const docMap = {
+    'nevrolog': 'Nevrolog',
+    'terapevt': 'Terapevt',
+    'labarant': 'Labarant',
+    'urolog': 'Urolog',
+    'fizioterapevt': 'Fizioterapevt',
+    'hamshira': 'Starshiy Hamshira',
+  };
+  Object.entries(docMap).forEach(([did, docName]) => {
+    const badge = document.getElementById('badge-' + did);
+    if (!badge) return;
+    // Bugun tasdiqlangan yozilishlar soni
+    const todayCount = bookings.filter(b =>
+      b.doctor === docName &&
+      b.date === today &&
+      (b.status === 'confirmed' || b.status === 'new')
+    ).length;
+    if (todayCount >= 10) {
+      badge.className = '';
+      badge.style.cssText = 'background:rgba(248,113,113,0.1);color:var(--danger);font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid rgba(248,113,113,0.2);';
+      badge.textContent = '🕐 Band (' + todayCount + ' qabul)';
+    } else if (todayCount >= 5) {
+      badge.className = '';
+      badge.style.cssText = 'background:rgba(251,191,36,0.1);color:var(--warning);font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid rgba(251,191,36,0.2);';
+      badge.textContent = '⚠️ Oz joy (' + todayCount + '/10)';
+    } else {
+      badge.className = 'badge';
+      badge.style.cssText = '';
+      badge.textContent = '✅ Bo\'sh (' + todayCount + '/10)';
+    }
+  });
+}
+
 function renderProfile() {
   if (!currentUser) return;
   document.getElementById('profile-info').innerHTML = `
@@ -1646,6 +1817,27 @@ function showToast(msg,isErr=false){
   t.style.display='block';
   setTimeout(()=>{t.style.display='none';},2800);
 }
+
+// ============================================================
+// AUTO LOGIN - sahifa ochilganda sessiyani tekshirish
+// ============================================================
+(function() {
+  const session = localStorage.getItem('mc_session');
+  if (session) {
+    try {
+      const s = JSON.parse(session);
+      const users = getUsers();
+      const user = users.find(u => u.id === s.id && u.phone === s.phone);
+      if (user) {
+        currentUser = user;
+        loadBookings();
+        enterApp();
+        return;
+      }
+    } catch(e) {}
+    localStorage.removeItem('mc_session');
+  }
+})();
 </script>
 </body>
 </html>
