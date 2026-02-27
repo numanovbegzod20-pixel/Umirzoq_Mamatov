@@ -2125,7 +2125,7 @@ function renderSharoitlarAdmin() {
 function renderSharoitlarPublic() {
   const publicGrid = document.getElementById('sharoitlar-public-grid');
   if (!publicGrid) return;
-  if (!sharoitlarData.length) { publicGrid.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted);font-size:13px;">Sharoitlar hali qo'shilmagan</div>'; return; }
+  if (!sharoitlarData.length) { publicGrid.innerHTML = "<div style=\"text-align:center;padding:20px;color:var(--muted);font-size:13px;\">Sharoitlar hali qo'shilmagan</div>"; return; }
   publicGrid.innerHTML = sharoitlarData.map(s => `
     <div style="background:var(--card);border-radius:12px;border:1px solid var(--border);overflow:hidden;">
       ${s.img ? `<img src="${s.img}" style="width:100%;height:120px;object-fit:cover;display:block;opacity:0.9;">` : `<div style="height:80px;display:flex;align-items:center;justify-content:center;font-size:40px;background:linear-gradient(135deg,rgba(56,189,248,0.08),rgba(52,211,153,0.05));">${s.emoji||'🏥'}</div>`}
@@ -2210,7 +2210,7 @@ function saveSharoit() {
   } else {
     const nid = sharoitlarData.length ? Math.max(...sharoitlarData.map(s=>s.id))+1 : 1;
     sharoitlarData.push({ id:nid, title, desc, emoji, img: _shImgData });
-    showToast('✅ Qo'shildi');
+    showToast('✅ Qo\'shildi');
   }
   saveSharoitlar();
   closeSharoitModal();
@@ -2218,11 +2218,11 @@ function saveSharoit() {
 }
 
 function deleteSharoit(id) {
-  if (!confirm('O'chirishni xohlaysizmi?')) return;
+  if (!confirm("O'chirishni xohlaysizmi?")) return;
   sharoitlarData = sharoitlarData.filter(s => s.id !== id);
   saveSharoitlar();
   renderSharoitlarAdmin();
-  showToast('🗑️ O'chirildi');
+  showToast('🗑️ O\'chirildi');
 }
 
 document.getElementById('sharoit-modal').addEventListener('click', e => {
